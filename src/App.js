@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import * as firebase from "firebase/app";
 import "firebase/database";
+import "firebase/auth";
 
 import RoomList from "./components/RoomList.js";
 import MessageList from "./components/MessageList.js";
+import User from "./components/User.js";
 
 // Initialize Firebase
 var config = {
@@ -18,25 +20,45 @@ var config = {
 firebase.initializeApp(config);
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-       activeRoom: 'Welcome'
+      activeRoom: "Select a Room",
+      user: { displayName: "guest" }
     };
- }
-
-   handleRoomSet(newRoom) {
-      this.setState({ activeRoom: newRoom });
-      //console.log(this.state.activeRoom);
   }
 
+  handleRoomSet(newRoom) {
+    this.setState({ activeRoom: newRoom });
+  }
+
+  setUser(user) {
+    if (user) {
+      this.setState({ user });
+    } else {
+      this.setState({ user: { displayName: "guest" } });
+    }
+
+    //console.log(this.state.user.displayName)
+  }
 
   render() {
     return (
       <div className="App">
-        <RoomList firebase = {firebase} triggerAppRoomSet = {this.handleRoomSet.bind(this)}/>
-        <MessageList firebase = {firebase} triggerAppRoomMessages = {this.state.activeRoom}/>
+        <RoomList
+          firebase={firebase}
+          triggerAppRoomSet={this.handleRoomSet.bind(this.user)}
+        />
+        <User
+          firebase={firebase}
+          user={this.state.user}
+          setUser={this.setUser.bind(this)}
+        />
+
+        <MessageList
+          firebase={firebase}
+          triggerAppRoomMessages={this.state.activeRoom}
+        />
       </div>
     );
   }

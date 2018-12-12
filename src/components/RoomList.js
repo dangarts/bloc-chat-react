@@ -5,7 +5,8 @@ class RoomList extends Component {
     super(props);
     this.state = {
       rooms: [],
-      newChatRoom: ""
+      newChatRoom: "",
+      placeholder: "Add room name"
     };
     this.roomsRef = this.props.firebase.database().ref("rooms");
   }
@@ -33,33 +34,67 @@ class RoomList extends Component {
 
     //reset form
     document.getElementById("new-chat-room-form").reset();
+    document.getElementById("utility-form-area").style.display = "block";
+    document.getElementById("new-chat-room-form").style.display = "none";
+    document.getElementById("add-room-button").style.display = "block";
   }
 
   onHandleRoomSet(newRoom) {
     this.props.triggerAppRoomSet(newRoom.name);
   }
 
+  onFocusCreateRoom() {
+    this.setState({ placeholder: "" });
+  }
+
+  onBlurCreateRoom() {
+    this.setState({ placeholder: "Add room name" });
+  }
+
+  handleDisplayRoomForm(e) {
+    console.log("test");
+    document.getElementById("utility-form-area").style.display = "none";
+    document.getElementById("new-chat-room-form").style.display = "block";
+    document.getElementById("add-room-button").style.display = "none";
+  }
+
   render(props) {
     return (
-      <div className="list-room-info">
-        <h1>Available Chat Rooms:</h1>
-        {this.state.rooms.map((room, index) => (
-          <button onClick={e => this.onHandleRoomSet(room, e)} key={index}>
-            {room.name}
-          </button>
-        ))}
+      <div className="component-roomlist">
+        <h1>Bloc Chat</h1>
+
+        <div className="available-room-list">
+          {this.state.rooms.map((room, index) => (
+            <button onClick={e => this.onHandleRoomSet(room, e)} key={index}>
+              {room.name}
+            </button>
+          ))}
+        </div>
+
+        <button
+          id="add-room-button"
+          className="add-room-button"
+          onClick={this.handleDisplayRoomForm.bind(this)}
+        >
+          <span className="icon ion-md-add-circle" />
+        </button>
+        <div id="utility-form-area">Create a Room</div>
 
         <form
           onSubmit={event => this.createRoom(event)}
           id="new-chat-room-form"
         >
-          <label htmlFor="newChatRoom">Enter new name: </label>
+          <label htmlFor="newChatRoom" />
           <input
             onChange={event => this.newChatNameChanged(event)}
             id="newChatRoom"
             name="newChatRoom"
+            placeholder={this.state.placeholder}
+            onFocus={this.onFocusCreateRoom.bind(this)}
+            onBlur={this.onBlurCreateRoom.bind(this)}
           />
-          <button type="submit">Create New Chat</button>
+
+          <button type="submit">Create</button>
         </form>
       </div>
     );

@@ -1,14 +1,154 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "roboto", Arial, Helvetica, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.App {
+  display: grid;
+  grid-template-columns: minmax(max-content, 250px) 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100vh;
+  color: white;
+}
+.component-roomlist {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.component-user {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.component-messagelist {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+
+
+/* ROOM LIST ************************************************** */
+.component-roomlist {
+  background: #131b23;
+  padding: 1rem;
+  text-align: center;
+  //height: 100vh;
+  overflow: scroll;
+}
+
+.component-roomlist h1 {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.component-roomlist .available-room-list {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.component-roomlist .available-room-list button {
+  padding: 1rem;
+  font-size: 1.5rem;
+  background: rgb(49, 67, 85);
+  color: rgb(142, 160, 179);
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(49, 67, 85, 0.13) 0px 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.component-roomlist .available-room-list button:hover {
+  background: rgb(65, 89, 112);
+}
+
+.component-roomlist .add-room-button {
+  background: none;
+  border: 0;
+  outline: none;
+  margin: 2rem auto 0.5rem auto;
+  cursor: pointer;
+  color: rgb(64, 145, 226);
+}
+
+.component-roomlist .add-room-button:hover {
+  color: rgb(80, 164, 248);
+}
+
+.component-roomlist .add-room-button .icon {
+  font-size: 2.5rem;
+  display: grid;
+}
+
+.component-roomlist #utility-form-area {
+  color: #7c8791;
+  font-size: 0.9rem;
+}
+
+.component-roomlist #new-chat-room-form {
+  display: none;
+}
+
+.component-roomlist #new-chat-room-form input {
+  border-radius: 100px;
+  border: 0;
+  padding: 0.8rem;
+  outline: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(64, 145, 226);
+  background: rgb(235, 245, 255);
+  margin-top: 3rem;
+  border: white 3px solid;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.component-roomlist #new-chat-room-form input:hover {
+  border: 3px rgba(104, 237, 22, 0.927) solid;
+}
+
+.component-roomlist #new-chat-room-form button {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  margin: 1rem auto;
+  background: rgba(85, 208, 9, 0.927);
+  border: 0;
+  color: white;
+  font-weight: bold;
+  display: block;
+}
+
+.component-roomlist #new-chat-room-form button:hover {
+  background: rgba(104, 237, 22, 0.927);
+}
+
+/* MESSAGE LIST ************************************************** */
+
+.component-messagelist {
+  background: rgb(31, 44, 56);
+  height: 100vh;
+  overflow: scroll;
+}
+
+.component-messagelist .messagelist-wrapper {
+  padding: 1rem;
+}
+/* USER LIST ************************************************** */
+
+.component-user {
+  background: rgb(31, 44, 56);
+  border: 1px solid rgb(14, 22, 29);
+  padding: 1rem;
 }
