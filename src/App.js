@@ -47,7 +47,7 @@ class App extends Component {
       <div className="App">
         <RoomList
           firebase={firebase}
-          triggerAppRoomSet={this.handleRoomSet.bind(this.user)}
+          triggerAppRoomSet={this.handleRoomSet.bind(this)}
         />
         <User
           firebase={firebase}
