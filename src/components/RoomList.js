@@ -41,6 +41,7 @@ class RoomList extends Component {
 
   onHandleRoomSet(newRoom) {
     this.props.triggerAppRoomSet(newRoom.name);
+     document.getElementsByClassName("messagelist-input")[0].style.display="block";
   }
 
   onFocusCreateRoom() {
@@ -52,7 +53,8 @@ class RoomList extends Component {
   }
 
   handleDisplayRoomForm(e) {
-    console.log("test");
+    //console.log("test");
+    
     document.getElementById("utility-form-area").style.display = "none";
     document.getElementById("new-chat-room-form").style.display = "block";
     document.getElementById("add-room-button").style.display = "none";
@@ -61,7 +63,7 @@ class RoomList extends Component {
   render(props) {
     return (
       <div className="component-roomlist">
-        <h1>Bloc Chat</h1>
+        
 
         <div className="available-room-list">
           {this.state.rooms.map((room, index) => (

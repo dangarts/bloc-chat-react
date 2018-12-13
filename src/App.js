@@ -45,6 +45,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+        <h1>Bloc Chat</h1>
+
         <RoomList
           firebase={firebase}
           triggerAppRoomSet={this.handleRoomSet.bind(this)}
@@ -58,6 +61,7 @@ class App extends Component {
         <MessageList
           firebase={firebase}
           triggerAppRoomMessages={this.state.activeRoom}
+          user={this.state.user}
         />
       </div>
     );
