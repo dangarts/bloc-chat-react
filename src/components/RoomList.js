@@ -94,6 +94,7 @@ class RoomList extends Component {
             placeholder={this.state.placeholder}
             onFocus={this.onFocusCreateRoom.bind(this)}
             onBlur={this.onBlurCreateRoom.bind(this)}
+            autoComplete="off"
           />
 
           <button type="submit">Create</button>

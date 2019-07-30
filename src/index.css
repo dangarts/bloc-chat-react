@@ -22,7 +22,7 @@ body {
   color: white;
 }
 
-h1{
+h1 {
   padding: 1rem;
 }
 
@@ -41,14 +41,12 @@ h1{
   grid-row: 2 / span 1;
 }
 
-
-
 /* ROOM LIST ************************************************** */
 .component-roomlist {
   /* background: #131b23; */
   padding: 1rem;
   text-align: center;
-  //height: 100vh;
+  height: 100vh;
   overflow: scroll;
 }
 
@@ -120,7 +118,7 @@ h1{
 }
 
 .component-roomlist #new-chat-room-form input::placeholder {
-  color:white;
+  color: white;
 }
 
 .component-roomlist #new-chat-room-form input:hover {
@@ -142,10 +140,10 @@ h1{
   outline: none;
 }
 
-  .component-roomlist #new-chat-room-form button:hover {
-    background: rgba(104, 237, 22, 0.927);
-    box-shadow: rgba(104, 237, 22, 0.5) 0px 0px 10px;
-  }
+.component-roomlist #new-chat-room-form button:hover {
+  background: rgba(104, 237, 22, 0.927);
+  box-shadow: rgba(104, 237, 22, 0.5) 0px 0px 10px;
+}
 
 /* MESSAGE LIST ************************************************** */
 
@@ -160,22 +158,21 @@ h1{
 .component-messagelist h2 {
   color: rgb(115, 147, 177);
   text-align: center;
-  border-bottom: 2px dotted rgb(47, 66, 83);;
+  border-bottom: 2px dotted rgb(47, 66, 83);
   padding: 1rem;
 }
 
 .component-messagelist .messagelist-wrapper {
   grid-row: 1 / span 1;
-  position:relative;
-  min-height:4em;
-  
+  position: relative;
+  min-height: 4em;
 }
 
 .component-messagelist .messagelist-wrapper .messagelist-content-scroll {
-  position:absolute;
+  position: absolute;
   padding: 1rem;
-  max-height:100%;
-  overflow:auto ;
+  max-height: 100%;
+  overflow: auto;
   width: 100%;
 }
 
@@ -183,99 +180,104 @@ h1{
   display: none;
 }
 
-    .component-messagelist .messagelist-input #messagelist-input-form {
-      display: grid;
-      grid-template-columns: 1fr min-content;
-      grid-gap: 1rem;
-      padding: 1rem;
-    }
+.component-messagelist .messagelist-input #messagelist-input-form {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-gap: 1rem;
+  padding: 1rem;
+}
 
-    .component-messagelist .messagelist-input #messagelist-input-form input {
-      height: 50px;
-      border-radius: 100px;
-      border: 0;
-      outline: 0;
-      font-size: 1rem;
-      font-weight: bold;
-      color: white;
-      background: rgba(235, 245, 255, 0);
-      border: white 3px solid;
-      box-sizing: border-box;
-      padding: 1rem;
-      text-align: left;
-    }
+.component-messagelist .messagelist-input #messagelist-input-form input {
+  height: 50px;
+  border-radius: 100px;
+  border: 0;
+  outline: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: rgba(235, 245, 255, 0);
+  border: white 3px solid;
+  box-sizing: border-box;
+  padding: 1rem;
+  text-align: left;
+}
 
-    .component-messagelist .messagelist-input #messagelist-input-form input::placeholder {
-      color: white;
-    }
-    
-    .component-messagelist .messagelist-input #messagelist-input-form input:hover {
-      border: 3px rgba(104, 237, 22, 0.927) solid;
-      box-shadow: rgba(104, 237, 22, 0.5) 0px 0px 10px;
-    }
-    
-    .component-messagelist .messagelist-input #messagelist-input-form button {
-      border-radius: 100%;
-      width: 50px;
-      height: 50px;
-      /* margin: 1rem auto; */
-      background: rgba(85, 208, 9, 0.927);
-      border: 0;
-      color: white;
-      font-weight: bold;
-      font-size: 1.5rem;
-      outline: none;
-    }
-    
-      .component-messagelist .messagelist-input #messagelist-input-form button:hover {
-        background: rgba(104, 237, 22, 0.927);
-        box-shadow: rgba(104, 237, 22, 0.5) 0px 0px 10px;
-      }
+.component-messagelist
+  .messagelist-input
+  #messagelist-input-form
+  input::placeholder {
+  color: white;
+}
 
-      .message-wrapper {
-        display: grid;
-        grid-template-columns: max-content 1fr max-content;
-        grid-template-rows: 1fr;
-        grid-gap: 1rem;
-        margin: 1rem;
-      }
+.component-messagelist .messagelist-input #messagelist-input-form input:hover {
+  border: 3px rgba(104, 237, 22, 0.927) solid;
+  box-shadow: rgba(104, 237, 22, 0.5) 0px 0px 10px;
+}
 
-      .message-wrapper:hover .message-sentAt{
-        color: rgba(74, 154, 235, 0.801);
-      }
+.component-messagelist .messagelist-input #messagelist-input-form button {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  /* margin: 1rem auto; */
+  background: rgba(85, 208, 9, 0.927);
+  border: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  outline: none;
+}
 
-          .message-wrapper .message-username {
-            grid-column: 1 / span 1;
-            grid-row: 1 / span 1;
-            text-align: left;
-            color: rgb(95, 171, 248);
-          }
+.component-messagelist .messagelist-input #messagelist-input-form button:hover {
+  background: rgba(104, 237, 22, 0.927);
+  box-shadow: rgba(104, 237, 22, 0.5) 0px 0px 10px;
+}
 
-          .message-wrapper .message-content {
-            grid-column: 2 / span 1;
-            grid-row: 1 / span 1;
-            text-align: left;
-          }
+.message-wrapper {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
+  margin: 1rem;
+}
 
-          .message-wrapper .message-content span{
-            border: 3px solid rgb(64, 145, 226);;
-            padding: 1rem;
-            display: inline-block; 
-            border-radius: 10px;
-            border-top-left-radius: 0px;
-          }
+.message-wrapper .message-username {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  text-align: left;
+  color: rgb(95, 171, 248);
+}
 
-          .message-wrapper .message-sentAt {
-            grid-column: 3 / span 1;
-            grid-row: 1 / span 1;
-            text-align: left;
-            color: rgba(64, 145, 226, 0.507);
-            font-size: .7rem;
-          }
+.message-wrapper .message-content {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  text-align: left;
+}
 
+.message-wrapper .message-content span {
+  border: 3px solid rgb(64, 145, 226);
+  padding: 1rem;
+  display: inline-block;
+  border-radius: 13px;
+  border-top-left-radius: 0px;
+}
 
+.message-wrapper .message-sentAt {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+  text-align: left;
+  color: rgba(64, 145, 226, 0.507);
+  font-size: 0.7rem;
+  font-size: bold;
+}
 
+.message-wrapper:hover .message-content span {
+  border-color: white;
+}
 
+.message-wrapper:hover .message-username,
+.message-wrapper:hover .message-sentAt {
+  color: white;
+}
 
 /* USER LIST ************************************************** */
 
@@ -289,48 +291,48 @@ h1{
   grid-column-gap: 1rem;
 }
 
-    .component-user .button-sign-in{
-      grid-column: 3 / span 1;
-      grid-row: 1 / span 2;
-      border: 0;
-      background: #da0a8a;
-      box-shadow: 0px 0px 5px #da0a8a71;
-      border-radius: 100%;
-      color: white;
-      font-weight: bold;
-      width: 60px;
-      height: 60px;
-      outline: none;
-    }
+.component-user .button-sign-in {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 2;
+  border: 0;
+  background: #da0a8a;
+  box-shadow: 0px 0px 5px #da0a8a71;
+  border-radius: 100%;
+  color: white;
+  font-weight: bold;
+  width: 60px;
+  height: 60px;
+  outline: none;
+}
 
-        .component-user .button-sign-in:hover{
-          background: #ff1aa7;
-        }
+.component-user .button-sign-in:hover {
+  background: #ff1aa7;
+}
 
-    .component-user .button-sign-out{
-      display: none;
-      grid-column: 3 / span 1;
-      grid-row: 1 / span 2;
-      outline: none;
-      border-radius: 100%;
-      border: 3px solid #da0a8a;
-      color: white;
-      font-weight: bold;
-      width: 60px;
-      height: 60px;
-      background: #131b23;
-    }
+.component-user .button-sign-out {
+  display: none;
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 2;
+  outline: none;
+  border-radius: 100%;
+  border: 3px solid #da0a8a;
+  color: white;
+  font-weight: bold;
+  width: 60px;
+  height: 60px;
+  background: #131b23;
+}
 
-    .component-user .display-name-intro{
-      grid-column: 2 / span 1;
-      grid-row: 1 / span 1;
-      color:rgb(111, 162, 207);
-      font-size:  .8rem;
-      font-weight: bold;
-    }
+.component-user .display-name-intro {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  color: rgb(111, 162, 207);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
 
-    .component-user .display-name{
-      grid-column: 2 / span 1;
-      grid-row: 2 / span 1;
-      font-size: 1.6rem;
-    }
+.component-user .display-name {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  font-size: 1.6rem;
+}

@@ -108,6 +108,7 @@ class MessageList extends Component {
               placeholder={this.state.placeholderMsg}
               onFocus={this.onFocusCreateMessage.bind(this)}
               onBlur={this.onBlurCreateMessage.bind(this)}
+              autoComplete="off"
             />
 
             <button type="submit"><span className="icon ion-md-return-left" /></button>
