@@ -6,7 +6,7 @@ class MessageList extends Component {
     this.state = {
       messages: [],
       newMessage: "",
-      placeholderMsg: "Type Message _" 
+      placeholderMsg: "Type Message _"
     };
     this.messagesRef = this.props.firebase.database().ref("messages");
     // this.sessionRef = this.props.firebase.database().ref("session");
@@ -57,6 +57,8 @@ class MessageList extends Component {
       sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
       roomId: this.props.triggerAppRoomMessages
     });
+    let scrolltoElement = document.getElementById("messagelist-scrollto");
+    scrolltoElement.scrollIntoView();
 
     document.getElementById("messagelist-input-form").reset();
   }
@@ -74,10 +76,7 @@ class MessageList extends Component {
   }
 
   render() {
-
     return (
-
-
       <div className="component-messagelist">
         <div className="messagelist-wrapper">
           <div className="messagelist-content-scroll">
@@ -88,10 +87,16 @@ class MessageList extends Component {
               .map((message, index) => (
                 <div className="message-wrapper" key={index}>
                   <div className="message-username">{message.username} </div>
-                  <div className="message-content"><span>{message.content}</span></div>
-                  <div className="message-sentAt">{this.formatDate(message.sentAt)}</div>
+                  <div className="message-content">
+                    <span>{message.content}</span>
+                  </div>
+                  <div className="message-sentAt">
+                    {this.formatDate(message.sentAt)}
+                  </div>
                 </div>
               ))}
+
+            <div id="messagelist-scrollto" />
           </div>
         </div>
 
@@ -111,7 +116,9 @@ class MessageList extends Component {
               autoComplete="off"
             />
 
-            <button type="submit"><span className="icon ion-md-return-left" /></button>
+            <button type="submit">
+              <span className="icon ion-md-return-left" />
+            </button>
           </form>
         </div>
       </div>
