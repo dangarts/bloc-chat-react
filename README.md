@@ -2,6 +2,8 @@
 
 A simple App using React with Firebase to build an application that sends and receives messages in real time.
 
+![Demo](https://firebase-react-chat.herokuapp.com/) - Allow a few seconds for the server to start up.
+
 ## Table of contents
 
 - [General info](#general-info)
