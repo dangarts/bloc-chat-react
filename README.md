@@ -2,6 +2,17 @@
 
 A simple App using React with Firebase to build an application that sends and receives messages in real time.
 
+## Table of contents
+
+- [General info](#general-info)
+- [Screenshots](#screenshots)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Features](#features)
+- [Todo](#todo)
+- [Status](#status)
+- [Contact](#contact)
+
 ## General Info
 
 This is a personal project to understand how Firebase works and how it integrates into a React application.
@@ -12,7 +23,7 @@ This is a personal project to understand how Firebase works and how it integrate
 
 ## Technologies
 
-- React 16.6.3 / bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+- React 16.6.3
 - Firebase
 
 ## Setup
