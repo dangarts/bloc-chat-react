@@ -21,7 +21,7 @@ This is a personal project to understand how Firebase works and how it integrate
 
 ## Screenshots
 
-![Project Screenshot](./public/readme-screenshot.png)
+![Project Screenshot](./public/readme-screenshot.jpg)
 
 ## Technologies
 
