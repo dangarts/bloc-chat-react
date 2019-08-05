@@ -28,9 +28,15 @@ class RoomList extends Component {
   createRoom(event) {
     event.preventDefault();
 
-    this.roomsRef.push({
-      name: this.state.newChatRoom
-    });
+    if (this.state.newChatRoom === "") {
+      console.log("need a value");
+    } else {
+      this.roomsRef.push({
+        name: this.state.newChatRoom
+      });
+
+      this.setState({ newChatRoom: "" });
+    }
 
     //reset form
     document.getElementById("new-chat-room-form").reset();
@@ -41,7 +47,9 @@ class RoomList extends Component {
 
   onHandleRoomSet(newRoom) {
     this.props.triggerAppRoomSet(newRoom.name);
-     document.getElementsByClassName("messagelist-input")[0].style.display="block";
+    // console.log(document.getElementsByClassName("messagelist-input")[0]);
+    // document.getElementsByClassName("messagelist-input")[0].style.display =
+    //   "block";
   }
 
   onFocusCreateRoom() {
@@ -54,7 +62,7 @@ class RoomList extends Component {
 
   handleDisplayRoomForm(e) {
     //console.log("test");
-    
+
     document.getElementById("utility-form-area").style.display = "none";
     document.getElementById("new-chat-room-form").style.display = "block";
     document.getElementById("add-room-button").style.display = "none";
@@ -63,8 +71,6 @@ class RoomList extends Component {
   render(props) {
     return (
       <div className="component-roomlist">
-        
-
         <div className="available-room-list">
           {this.state.rooms.map((room, index) => (
             <button onClick={e => this.onHandleRoomSet(room, e)} key={index}>

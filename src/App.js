@@ -23,7 +23,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeRoom: "Select a Room",
+      activeRoom: "Welcome!",
       user: { displayName: "guest" }
     };
   }
@@ -33,11 +33,25 @@ class App extends Component {
   }
 
   setUser(user) {
-    if (user) {
-      this.setState({ user });
-    } else {
+    if (user === null) {
       this.setState({ user: { displayName: "guest" } });
+      document.getElementsByClassName("button-sign-in")[0].style.display =
+        "block";
+      document.getElementsByClassName("button-sign-out")[0].style.display =
+        "none";
+    } else {
+      this.setState({ user });
+      document.getElementsByClassName("button-sign-in")[0].style.display =
+        "none";
+      document.getElementsByClassName("button-sign-out")[0].style.display =
+        "block";
     }
+
+    // if (user) {
+    //   this.setState({ user });
+    // } else {
+    //   this.setState({ user: { displayName: "guest" } });
+    // }
 
     //console.log(this.state.user.displayName)
   }

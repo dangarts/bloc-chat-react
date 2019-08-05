@@ -25,9 +25,20 @@ body {
   }
 }
 
+.home-content {
+  padding: 40px;
+  p {
+    padding-bottom: 20px;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.767);
+    line-height: 2rem;
+  }
+  box-sizing: border-box;
+}
+
 /* ROOM LIST ************************************************** */
 .component-roomlist {
-  /* background: #131b23; */
+  background: #131b23;
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
   padding: 1rem;
@@ -128,11 +139,19 @@ body {
   display: grid;
   grid-template-rows: 1fr min-content;
   border-top-left-radius: 10px;
+  a {
+    color: #da0a8a;
+    text-decoration: none;
+    border-bottom: 3px dotted white;
+    &:hover {
+      color: #ff1aa7;
+    }
+  }
   h2 {
     color: rgb(115, 147, 177);
     text-align: center;
     border-bottom: 2px dotted rgb(47, 66, 83);
-    padding: 1rem;
+    padding: 20px;
   }
   .messagelist-wrapper {
     grid-row: 1 / span 1;
@@ -140,12 +159,12 @@ body {
     // min-height: 4em;
     .messagelist-content-scroll {
       position: absolute;
-      padding: 1rem;
+      // padding: 1rem;
       max-height: 100%;
       overflow: auto;
       width: 100%;
       #messagelist-scrollto {
-        height: 50px;
+        height: 70px;
         width: 100%;
         // background-color: red;
       }

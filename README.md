@@ -42,18 +42,17 @@ You will also see any lint errors in the console.
 
 ## Features
 
-- Room creation
-- Room display
-- Chat room dialogue
-- Chat creation
-- User authentication
+- User Authentication via Firebase
+- Display list of available chat rooms
+- Create chat rooms
+- Display list of messages of each chat room
+- Set username to display in chat rooms
+- Send messages associated with my username in a chat room
 
 ## Todo
 
-- Admin user policy
-- Room deletion by owner or admin
-- Chat deletion by admin
-- For Demo Purpose / reset firebase DB
+- Room deletion by owner
+- For Demo Purpose / reset firebase DB every day
 
 ## Status
 
